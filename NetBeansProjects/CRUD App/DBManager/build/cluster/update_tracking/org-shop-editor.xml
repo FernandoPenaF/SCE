@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="org.shop.editor">
+    <module_version install_time="1571696228865" last="true" origin="installer" specification_version="1.0">
+        <file crc="147738841" name="config/Modules/org-shop-editor.xml"/>
+        <file crc="17153395" name="modules/org-shop-editor.jar"/>
+    </module_version>
+</module>

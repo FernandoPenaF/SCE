@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="xml">
+        <folder name="entities">
+            <folder name="org_shop_editor">
+                <file name="CustomerEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--org.shop.editor.CustomerEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//org.shop.editor//CustomerEditor//EN"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="memory">
+            <folder name="org">
+                <folder name="shop">
+                    <folder name="editor">
+                        <file name="CustomerEditorTopComponent">
+                            <!--org.shop.editor.CustomerEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//org_shop_editor/CustomerEditor.instance"/>
+                        </file>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+        <folder name="lookups">
+            <folder name="org_shop_editor">
+                <file name="CustomerEditor.instance">
+                    <!--org.shop.editor.CustomerEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="org.shop.editor.CustomerEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="org.shop.editor.CustomerEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="org-shop-editor-CustomerEditorTopComponent.shadow">
+                <!--org.shop.editor.CustomerEditorTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/org-shop-editor-CustomerEditorTopComponent.instance"/>
+            </file>
+        </folder>
+        <folder name="File">
+            <file name="org-shop-editor-CustomerNewActionListener.shadow">
+                <!--org.shop.editor.CustomerNewActionListener-->
+                <attr name="originalFile" stringvalue="Actions/File/org-shop-editor-CustomerNewActionListener.instance"/>
+                <attr intvalue="10" name="position"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="CustomerEditorTopComponent.settings">
+                <!--org.shop.editor.CustomerEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="org.shop.editor.CustomerEditorTopComponent"/>
+</settings>
+]]></file>
+        </folder>
+        <folder name="Modes">
+            <folder name="editor">
+                <file name="CustomerEditorTopComponent.wstcref">
+                    <!--org.shop.editor.CustomerEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="CustomerEditorTopComponent"/>
+  <state opened="true"/>
+</tc-ref>
+]]></file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="org-shop-editor-CustomerEditorTopComponent.instance">
+                <!--org.shop.editor.CustomerEditorTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="org.shop.editor.CustomerEditorTopComponent"/>
+                <attr name="preferredID" stringvalue="CustomerEditorTopComponent"/>
+                <attr
+                    bundlevalue="org.shop.editor.Bundle#CTL_CustomerEditorAction" name="displayName"/>
+            </file>
+        </folder>
+        <folder name="File">
+            <file name="org-shop-editor-CustomerNewActionListener.instance">
+                <!--org.shop.editor.CustomerNewActionListener-->
+                <attr
+                    bundlevalue="org.shop.editor.Bundle#CTL_CustomerNewActionListener" name="displayName"/>
+                <attr
+                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="instanceCreate"/>
+                <attr name="delegate" newvalue="org.shop.editor.CustomerNewActionListener"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

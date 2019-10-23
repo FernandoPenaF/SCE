@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="VentaLibrosWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types/>
+    <message name="VentaLibrosWSDLOperationRequest">
+        <part name="ISBN" type="xsd:string"/>
+        <part name="idCliente" type="xsd:string"/>
+        <part name="unidades" type="xsd:int"/>
+        <part name="precioUnidad" type="xsd:int"/>
+    </message>
+    <message name="VentaLibrosWSDLOperationResponse">
+        <part name="resultado" type="xsd:string"/>
+    </message>
+    <portType name="VentaLibrosWSDLPortType">
+        <operation name="VentaLibrosWSDLOperation">
+            <input name="input1" message="tns:VentaLibrosWSDLOperationRequest"/>
+            <output name="output1" message="tns:VentaLibrosWSDLOperationResponse"/>
+        </operation>
+    </portType>
+    <binding name="VentaLibrosWSDLBinding" type="tns:VentaLibrosWSDLPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="VentaLibrosWSDLOperation">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="VentaLibrosWSDLService">
+        <port name="VentaLibrosWSDLPort" binding="tns:VentaLibrosWSDLBinding">
+            <soap:address location="http://localhost:${HttpDefaultPort}/VentaLibrosWSDLService/VentaLibrosWSDLPort"/>
+        </port>
+    </service>
+    <plnk:partnerLinkType name="VentaLibrosWSDL">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="VentaLibrosWSDLPortTypeRole" portType="tns:VentaLibrosWSDLPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

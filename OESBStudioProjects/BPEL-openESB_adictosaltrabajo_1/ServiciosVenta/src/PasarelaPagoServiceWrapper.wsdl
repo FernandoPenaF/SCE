@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PasarelaPagoServiceWrapper" targetNamespace="http://enterprise.netbeans.org/bpel/PasarelaPagoServiceWrapper" xmlns:tns="http://enterprise.netbeans.org/bpel/PasarelaPagoServiceWrapper" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns="http://pasarelapago.webservice.adictosaltrabajo.com/">
+    <import location="ServicioPago/localhost_8080/PagoOnline/PasarelaPagoService.wsdl" namespace="http://pasarelapago.webservice.adictosaltrabajo.com/"/>
+    <plnk:partnerLinkType name="PasarelaPagoLinkType">
+        <plnk:role name="PasarelaPagoRole" portType="ns:PasarelaPago"/>
+    </plnk:partnerLinkType>
+</definitions>

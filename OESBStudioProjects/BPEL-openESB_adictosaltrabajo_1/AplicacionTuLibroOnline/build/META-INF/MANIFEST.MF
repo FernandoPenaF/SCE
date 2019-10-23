@@ -1,0 +1,4 @@
+Bundle-Name: AplicacionTuLibroOnline
+Bundle-SymbolicName: AplicacionTuLibroOnline
+Bundle-ManifestVersion: 2
+Bundle-Version: 1.0.0

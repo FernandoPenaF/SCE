@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="xml">
+        <folder name="entities">
+            <folder name="org_shop_viewer">
+                <file name="CustomerViewer" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--org.shop.viewer.CustomerViewerTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//org.shop.viewer//CustomerViewer//EN"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="memory">
+            <folder name="org">
+                <folder name="shop">
+                    <folder name="viewer">
+                        <file name="CustomerViewerTopComponent">
+                            <!--org.shop.viewer.CustomerViewerTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//org_shop_viewer/CustomerViewer.instance"/>
+                        </file>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+        <folder name="lookups">
+            <folder name="org_shop_viewer">
+                <file name="CustomerViewer.instance">
+                    <!--org.shop.viewer.CustomerViewerTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="org.shop.viewer.CustomerViewerTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="org.shop.viewer.CustomerViewerTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="org-shop-viewer-CustomerViewerTopComponent.shadow">
+                <!--org.shop.viewer.CustomerViewerTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/org-shop-viewer-CustomerViewerTopComponent.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="CustomerViewerTopComponent.settings">
+                <!--org.shop.viewer.CustomerViewerTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="org.shop.viewer.CustomerViewerTopComponent"/>
+</settings>
+]]></file>
+        </folder>
+        <folder name="Modes">
+            <folder name="explorer">
+                <file name="CustomerViewerTopComponent.wstcref">
+                    <!--org.shop.viewer.CustomerViewerTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="CustomerViewerTopComponent"/>
+  <state opened="true"/>
+</tc-ref>
+]]></file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="org-shop-viewer-CustomerViewerTopComponent.instance">
+                <!--org.shop.viewer.CustomerViewerTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="org.shop.viewer.CustomerViewerTopComponent"/>
+                <attr name="preferredID" stringvalue="CustomerViewerTopComponent"/>
+                <attr
+                    bundlevalue="org.shop.viewer.Bundle#CTL_CustomerViewerAction" name="displayName"/>
+            </file>
+        </folder>
+        <folder name="Customer">
+            <file name="org-shop-viewer-CustomerRootRefreshActionListener.instance">
+                <!--org.shop.viewer.CustomerRootRefreshActionListener-->
+                <attr
+                    bundlevalue="org.shop.viewer.Bundle#CTL_CustomerRootRefreshActionListener" name="displayName"/>
+                <attr
+                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="instanceCreate"/>
+                <attr name="delegate" newvalue="org.shop.viewer.CustomerRootRefreshActionListener"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<endpoints xmlns="http://xml.netbeans.org/schema/endPoints" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xml.netbeans.org/schema/endPoints endPoints.xsd">
+    <project>
+        <name>LibroOnlineCA</name>
+        <version>1.0</version>
+        <description>description</description>
+    </project>
+    <team>
+        <name>unknown team</name>
+        <contact>no contact provided</contact>
+    </team>
+    <endpoint>
+        <type>provider</type>
+        <endpoint-name>VentaLibrosWSDLPortTypeRole_myRole</endpoint-name>
+        <service-name>
+            <namespace>http://enterprise.netbeans.org/bpel/ServiciosVentaN/serviciosVentaN</namespace>
+            <localname>VentaLibros</localname>
+        </service-name>
+        <interface-name>
+            <namespace>http://j2ee.netbeans.org/wsdl/ServiciosVentaN/DescriptorBPEL/VentaLibrosWSDL</namespace>
+            <localname>VentaLibrosWSDLPortType</localname>
+        </interface-name>
+        <description>description of the service provided or consumed through this endPoint</description>
+    </endpoint>
+    <endpoint>
+        <type>consumer</type>
+        <endpoint-name>AlmacenRole_partnerRole</endpoint-name>
+        <service-name>
+            <namespace>http://enterprise.netbeans.org/bpel/ServiciosVentaN/serviciosVentaN</namespace>
+            <localname>ServicioAlmacen</localname>
+        </service-name>
+        <interface-name>
+            <namespace>http://almacen.webservice.adictosaltrabajo.com/</namespace>
+            <localname>Almacen</localname>
+        </interface-name>
+        <description>description of the service provided or consumed through this endPoint</description>
+    </endpoint>
+    <endpoint>
+        <type>consumer</type>
+        <endpoint-name>EnvioPaquetesRole_partnerRole</endpoint-name>
+        <service-name>
+            <namespace>http://enterprise.netbeans.org/bpel/ServiciosVentaN/serviciosVentaN</namespace>
+            <localname>ServicioMensajeria</localname>
+        </service-name>
+        <interface-name>
+            <namespace>http://mensajeria.webservice.adictosaltrabajo.com/</namespace>
+            <localname>EnvioPaquetes</localname>
+        </interface-name>
+        <description>description of the service provided or consumed through this endPoint</description>
+    </endpoint>
+    <endpoint>
+        <type>consumer</type>
+        <endpoint-name>PasarelaPagoRole_partnerRole</endpoint-name>
+        <service-name>
+            <namespace>http://enterprise.netbeans.org/bpel/ServiciosVentaN/serviciosVentaN</namespace>
+            <localname>ServicioPago</localname>
+        </service-name>
+        <interface-name>
+            <namespace>http://pasarelapago.webservice.adictosaltrabajo.com/</namespace>
+            <localname>PasarelaPago</localname>
+        </interface-name>
+        <description>description of the service provided or consumed through this endPoint</description>
+    </endpoint>
+</endpoints>

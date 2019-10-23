@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="org.shop.viewer">
+    <module_version install_time="1571695374292" last="true" origin="installer" specification_version="1.0">
+        <file crc="3656605986" name="config/Modules/org-shop-viewer.xml"/>
+        <file crc="97744348" name="modules/org-shop-viewer.jar"/>
+    </module_version>
+</module>

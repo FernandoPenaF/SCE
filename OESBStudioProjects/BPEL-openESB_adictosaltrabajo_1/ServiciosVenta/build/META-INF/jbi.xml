@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/ServiciosVenta/serviciosVenta" xmlns:ns1="http://almacen.webservice.adictosaltrabajo.com/" xmlns:ns2="http://pasarelapago.webservice.adictosaltrabajo.com/" xmlns:ns3="http://mensajeria.webservice.adictosaltrabajo.com/" xmlns:ns4="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" xmlns:ns5="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
+    <services binding-component="false">
+        <provides endpoint-name="VentaLibrosWSDLPortTypeRole_myRole" interface-name="ns4:VentaLibrosWSDLPortType" service-name="ns0:VentaLibros">
+            <ns5:display-name>VentaLibros</ns5:display-name>
+            <ns5:process-name>serviciosVenta</ns5:process-name>
+            <ns5:file-path>serviciosVenta.bpel</ns5:file-path>
+        </provides>
+        <consumes endpoint-name="AlmacenRole_partnerRole" interface-name="ns1:Almacen" service-name="ns0:ServicioAlmacen">
+            <ns5:display-name>ServicioAlmacen</ns5:display-name>
+            <ns5:process-name>serviciosVenta</ns5:process-name>
+            <ns5:file-path>serviciosVenta.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="PasarelaPagoRole_partnerRole" interface-name="ns2:PasarelaPago" service-name="ns0:ServicioPago">
+            <ns5:display-name>ServicioPago</ns5:display-name>
+            <ns5:process-name>serviciosVenta</ns5:process-name>
+            <ns5:file-path>serviciosVenta.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="EnvioPaquetesRole_partnerRole" interface-name="ns3:EnvioPaquetes" service-name="ns0:ServicioMensajeria">
+            <ns5:display-name>ServicioMensajeria</ns5:display-name>
+            <ns5:process-name>serviciosVenta</ns5:process-name>
+            <ns5:file-path>serviciosVenta.bpel</ns5:file-path>
+        </consumes>
+    </services>
+</jbi>

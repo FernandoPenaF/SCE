@@ -1,0 +1,30 @@
+De:	OpenESB Community download <contact@open-esb.net>
+Enviado el:	lunes, 5 de noviembre de 2018 05:20 p. m.
+Para:	rgamboa@itam.mx
+Asunto:	Download OpenESB Version SE 3.1.2.3-a
+
+ 
+Dear Rafael Gamboa 
+Further to your email, please just click on the link to download OpenESB binary zip file. 
+Click here: OpenESB Version SE 3.1.2.3-a 
+Install OpenESB binaries from .zip
+Quick start with OpenESB
+For the version 3.x and more
+1.	Download the zip file to an absolute path (the path you want). We name it 
+${OpenESB_HOME} in this email.
+2.	Set the JAVA_HOME environment variable. 
+1.	On Linux/Unix platforms: 
+JAVA_HOME=/usr/java/jdk1.8.0_151  
+export JAVA_HOME 
+2.	On Windows platforms: 
+set JAVA_HOME=c:\Program Files\Java\jdk1.8.0_151 
+3.	Go to the directory ${OpenESB_HOME}/OE-Instance/bin
+1.	On Linux/Unix platform run "openesb.sh"
+2.	On Windows run "openESB.bat"
+4.	Wait for the message " OESE-1004: Instance server [Version XXX] started in 
+xxxx ms. "
+To get information and documentation on OpenESB, visit our web site www.open-esb.net.
+Feel free to contact our partners to get more information on development consulting and 
+training on OpenESB.
+Regards
+The community

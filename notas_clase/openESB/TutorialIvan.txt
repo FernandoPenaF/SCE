@@ -1,0 +1,9 @@
+Tutorial de Bpel por Iván García Puebla en AdictosAlTrabajo:
+
+
+Parte I
+https://www.adictosaltrabajo.com/tutoriales/introduccion-bpel-openesb/
+
+Parte II
+https://www.adictosaltrabajo.com/tutoriales/introduccion-bpel-openesb-2/
+

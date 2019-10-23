@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="MyCalculatorCA" xmlns:ns2="http://enterprise.netbeans.org/bpel/MyCalculator/myCalculator" xmlns:ns3="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" version="1.0">
+    <services binding-component="true">
+        <consumes endpoint-name="casaPort1" interface-name="ns3:MyCalculatorPortType" service-name="ns1:MyCalculatorCAService1"/>
+    </services>
+</jbi>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/ServiciosVenta/serviciosVenta" xmlns:ns2="http://almacen.webservice.adictosaltrabajo.com/" xmlns:ns3="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" xmlns:ns4="http://pasarelapago.webservice.adictosaltrabajo.com/" xmlns:ns5="http://mensajeria.webservice.adictosaltrabajo.com/" version="1.0">
+    <services binding-component="true">
+        <provides endpoint-name="AlmacenPort" interface-name="ns2:Almacen" service-name="ns2:AlmacenService"/>
+        <provides endpoint-name="PasarelaPagoPort" interface-name="ns4:PasarelaPago" service-name="ns4:PasarelaPagoService"/>
+        <provides endpoint-name="EnvioPaquetesPort" interface-name="ns5:EnvioPaquetes" service-name="ns5:EnvioPaquetesService"/>
+        <consumes endpoint-name="VentaLibrosWSDLPort" interface-name="ns3:VentaLibrosWSDLPortType" service-name="ns3:VentaLibrosWSDLService"/>
+    </services>
+</jbi>

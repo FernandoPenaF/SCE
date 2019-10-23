@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process
+    name="serviciosVenta"
+    targetNamespace="http://enterprise.netbeans.org/bpel/ServiciosVenta/serviciosVenta"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/ServiciosVenta/serviciosVenta" xmlns:sxed2="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2">
+    <import namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" location="DescriptorBPEL/VentaLibrosWSDL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/AlmacenServiceWrapper" location="AlmacenServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://almacen.webservice.adictosaltrabajo.com/" location="ServicioAlmacen/localhost_8080/TiendaElectronica/AlmacenService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/EnvioPaquetesServiceWrapper" location="EnvioPaquetesServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://mensajeria.webservice.adictosaltrabajo.com/" location="ServicioMensajeria/localhost_8080/MensajeriaExpress/EnvioPaquetesService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/PasarelaPagoServiceWrapper" location="PasarelaPagoServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://pasarelapago.webservice.adictosaltrabajo.com/" location="ServicioPago/localhost_8080/PagoOnline/PasarelaPagoService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="ServicioAlmacen" xmlns:tns="http://enterprise.netbeans.org/bpel/AlmacenServiceWrapper" partnerLinkType="tns:AlmacenLinkType" partnerRole="AlmacenRole"/>
+        <partnerLink name="ServicioPago" xmlns:tns="http://enterprise.netbeans.org/bpel/PasarelaPagoServiceWrapper" partnerLinkType="tns:PasarelaPagoLinkType" partnerRole="PasarelaPagoRole"/>
+        <partnerLink name="ServicioMensajeria" xmlns:tns="http://enterprise.netbeans.org/bpel/EnvioPaquetesServiceWrapper" partnerLinkType="tns:EnvioPaquetesLinkType" partnerRole="EnvioPaquetesRole"/>
+        <partnerLink name="VentaLibros" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" partnerLinkType="tns:VentaLibrosWSDL" myRole="VentaLibrosWSDLPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="EnviarProductoOut" xmlns:tns="http://mensajeria.webservice.adictosaltrabajo.com/" messageType="tns:enviarProductoResponse"/>
+        <variable name="EnviarProductoIn" xmlns:tns="http://mensajeria.webservice.adictosaltrabajo.com/" messageType="tns:enviarProducto"/>
+        <variable name="FacturarOut" xmlns:tns="http://pasarelapago.webservice.adictosaltrabajo.com/" messageType="tns:facturarResponse"/>
+        <variable name="FacturarIn" xmlns:tns="http://pasarelapago.webservice.adictosaltrabajo.com/" messageType="tns:facturar"/>
+        <variable name="ComprobarStockOut" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:comprobarStockResponse"/>
+        <variable name="ComprobarStockIn" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:comprobarStock"/>
+        <variable name="VentaLibrosWSDLOperationOut1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationResponse"/>
+        <variable name="VentaLibrosWSDLOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationResponse"/>
+        <variable name="VentaLibrosWSDLOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationRequest"/>
+    </variables>
+    <sequence>
+        <receive name="Recepcion" createInstance="yes" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationIn"/>
+        <assign name="AsigStock">
+            <copy>
+                <from variable="VentaLibrosWSDLOperationIn" part="ISBN"/>
+                <to>$ComprobarStockIn.parameters/ISBN</to>
+            </copy>
+            <copy>
+                <from variable="VentaLibrosWSDLOperationIn" part="unidades"/>
+                <to>$ComprobarStockIn.parameters/unidades</to>
+            </copy>
+        </assign>
+        <invoke name="ComprobarStock" partnerLink="ServicioAlmacen" operation="comprobarStock" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ComprobarStockIn" outputVariable="ComprobarStockOut"/>
+        <if name="If1">
+            <condition>true() and $ComprobarStockOut.parameters/return</condition>
+            <sequence name="Sequence1">
+                <assign name="AsigFacturar">
+                    <copy>
+                        <from variable="VentaLibrosWSDLOperationIn" part="idCliente"/>
+                        <to>$FacturarIn.parameters/idCliente</to>
+                    </copy>
+                    <copy>
+                        <from>$VentaLibrosWSDLOperationIn.unidades * $VentaLibrosWSDLOperationIn.precioUnidad</from>
+                        <to>$FacturarIn.parameters/cuantia</to>
+                    </copy>
+                </assign>
+                <invoke name="Facturar" partnerLink="ServicioPago" operation="facturar" xmlns:tns="http://pasarelapago.webservice.adictosaltrabajo.com/" portType="tns:PasarelaPago" inputVariable="FacturarIn" outputVariable="FacturarOut"/>
+            </sequence>
+            <else>
+                <sequence name="Sequence2">
+                    <assign name="AsigNoStock">
+                        <copy>
+                            <from>'Stock en almacen insuficiente'</from>
+                            <to variable="VentaLibrosWSDLOperationOut1" part="resultado"/>
+                        </copy>
+                    </assign>
+                    <reply name="RespuestaNoOk" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut1"/>
+                </sequence>
+            </else>
+        </if>
+        <assign name="AsigOrden">
+            <copy>
+                <from>'TuLibroOnline'</from>
+                <to>$EnviarProductoIn.parameters/empresa</to>
+            </copy>
+            <copy>
+                <from>$FacturarOut.parameters/return</from>
+                <to>$EnviarProductoIn.parameters/idPedido</to>
+            </copy>
+        </assign>
+        <invoke name="OrdenEnvio" partnerLink="ServicioMensajeria" operation="enviarProducto" xmlns:tns="http://mensajeria.webservice.adictosaltrabajo.com/" portType="tns:EnvioPaquetes" inputVariable="EnviarProductoIn" outputVariable="EnviarProductoOut"/>
+        <assign name="AsigOk">
+            <copy>
+                <from>concat('El pedido con el ID: ', $FacturarOut.parameters/return, ' llegara en ', $EnviarProductoOut.parameters/return, ' dias')</from>
+                <to variable="VentaLibrosWSDLOperationOut" part="resultado"/>
+            </copy>
+        </assign>
+        <reply name="RespuestaOK" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut"/>
+    </sequence>
+</process>

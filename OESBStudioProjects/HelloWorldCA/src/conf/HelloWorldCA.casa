@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="HelloWorldCA" xmlns:ns2="http://j2ee.netbeans.org/wsdl/HelloWorld/src/HelloWorld" xmlns:ns3="http://enterprise.netbeans.org/bpel/HelloWorld/helloWorld" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="casaPort1" interface-name="ns2:HelloWorldPortType" name="endpoint1" service-name="ns1:HelloWorldCAService1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="HelloWorldPortTypeRole_myRole" file-path="helloWorld.bpel" interface-name="ns2:HelloWorldPortType" name="endpoint2" process-name="helloWorld" service-name="ns3:PartnerLink1"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="HelloWorld.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="HelloWorldCA-HelloWorld" unit-name="HelloWorld" unknown="false" x="162" y="319">
+            <provides endpoint="endpoint2"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="HelloWorldCA-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port bindingType="soap" x="134" y="235">
+                    <link xlink:href="../jbiasa/HelloWorldCA.wsdl#xpointer(/definitions/service[@name='HelloWorldCAService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint1" mode="" provider="endpoint2" route-type="direct" routing-rule="" state="new"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/HelloWorldCA.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/HelloWorld/HelloWorld.wsdl#xpointer(/definitions/portType[@name='HelloWorldPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/HelloWorldCA.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/HelloWorldCA.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/HelloWorldCA.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/HelloWorldCA.wsdl#xpointer(/definitions/service[@name='HelloWorldCAService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/HelloWorldCA.wsdl#xpointer(/definitions/service[@name='HelloWorldCAService1'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="217"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>
