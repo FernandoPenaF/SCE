@@ -26,7 +26,6 @@ public class TstWSSuma {
         a = 0; b = 0; c = 0;
         n = (args.length < 2) ? 2000 : Integer.valueOf(args[1]);
         
-        
         try {
             Registry registry = LocateRegistry.getRegistry(host);
             IServDisparo servDisparo = (IServDisparo) registry.lookup("ServidorDeDisparo");

@@ -1,1 +1,1 @@
-cd C:\Users\LPENAF\Desktop\SCE_TAREA2\Tarea\SCE\pruebaRMI
+cd C:\Users\LPENAF\Desktop\SCE\notas_clase\pruebaRMI

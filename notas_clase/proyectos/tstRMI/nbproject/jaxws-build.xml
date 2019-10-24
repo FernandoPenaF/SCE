@@ -33,5 +33,22 @@
         <delete dir="${build.generated.dir}/jax-wsCache/WSSuma"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/example/hello"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSSuma"/>
+    <target name="wsimport-client-AlmacenService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AlmacenService"/>
+        <property name="wsdl-AlmacenService" location="xml-resources/web-service-references/AlmacenService/wsdl/localhost_43095/TiendaElectronica/AlmacenService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AlmacenService" destdir="${build.generated.dir}/jax-wsCache/AlmacenService" wsdl="${wsdl-AlmacenService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:43095/TiendaElectronica/AlmacenService?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-AlmacenService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AlmacenService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AlmacenService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AlmacenService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AlmacenService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/adictosaltrabajo/webservice/almacen"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSSuma, wsimport-client-AlmacenService"/>
 </project>
