@@ -32,6 +32,11 @@
             <output message="tns:operationResponse" name="output4"/>
             <fault message="tns:operationFault" name="fault1"/>
         </operation>
+        <operation name="moduloOperation">
+            <input message="tns:operationRequest" name="input5"/>
+            <output message="tns:operationResponse" name="output5"/>
+            <fault message="tns:operationFault" name="fault2"/>
+        </operation>
     </portType>
     <plnk:partnerLinkType name="MyCalculator">
         <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 

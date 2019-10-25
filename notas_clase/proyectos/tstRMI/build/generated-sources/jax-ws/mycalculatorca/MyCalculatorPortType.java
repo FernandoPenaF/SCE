@@ -77,4 +77,19 @@ public interface MyCalculatorPortType {
         throws OperationFault
     ;
 
+    /**
+     * 
+     * @param part1
+     * @return
+     *     returns org.netbeans.xml.schema.mycalculatorschema.OutputComplexType
+     * @throws OperationFault
+     */
+    @WebMethod(action = "modulo")
+    @WebResult(name = "myOutput", targetNamespace = "http://xml.netbeans.org/schema/MyCalculatorSchema", partName = "part1")
+    public OutputComplexType moduloOperation(
+        @WebParam(name = "myInput", targetNamespace = "http://xml.netbeans.org/schema/MyCalculatorSchema", partName = "part1")
+        InputComplexType part1)
+        throws OperationFault
+    ;
+
 }
