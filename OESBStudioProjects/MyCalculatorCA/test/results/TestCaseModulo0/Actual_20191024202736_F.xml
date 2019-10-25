@@ -5,7 +5,7 @@
   <SOAP-ENV:Body>
     <SOAP-ENV:Fault>
       <faultcode>SOAP-ENV:Client</faultcode>
-      <faultstring>fault1</faultstring>
+      <faultstring>fault2</faultstring>
       <detail>
         <myFault xmlns="http://xml.netbeans.org/schema/MyCalculatorSchema">
           <faultDetail>The denominator cannot be equals to zero.</faultDetail>

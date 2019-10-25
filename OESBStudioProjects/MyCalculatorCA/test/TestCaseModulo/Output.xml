@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/">
   <SOAP-ENV:Body>
     <myOutput xmlns="http://xml.netbeans.org/schema/MyCalculatorSchema" xmlns:msgns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator">
-      <response01>0.3333333333333333</response01>
+      <response01>1.0</response01>
     </myOutput>
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

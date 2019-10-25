@@ -5,12 +5,12 @@
         <endpoint display-name="PartnerLink1" endpoint-name="MyCalculatorPortTypeRole_myRole" file-path="myCalculator.bpel" interface-name="ns2:MyCalculatorPortType" name="endpoint2" process-name="myCalculator" service-name="ns3:PartnerLink1"/>
     </endpoints>
     <service-units>
-        <service-engine-service-unit artifacts-zip="MyCalculator.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="MyCalculatorCA-MyCalculator" unit-name="MyCalculator" unknown="false" x="97" y="334">
+        <service-engine-service-unit artifacts-zip="MyCalculator.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="MyCalculatorCA-MyCalculator" unit-name="MyCalculator" unknown="false" x="126" y="271">
             <provides endpoint="endpoint2"/>
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="MyCalculatorCA-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port bindingType="soap" x="67" y="316">
+                <port bindingType="soap" x="67" y="274">
                     <link xlink:href="../jbiasa/MyCalculatorCA.wsdl#xpointer(/definitions/service[@name='MyCalculatorCAService1']/port[@name='casaPort1'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
@@ -19,7 +19,7 @@
         </binding-component-service-unit>
     </service-units>
     <connections>
-        <connection consumer="endpoint1" mode="" provider="endpoint2" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint1" mode="" provider="endpoint2" route-type="direct" routing-rule="" state="new"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/MyCalculatorCA.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
