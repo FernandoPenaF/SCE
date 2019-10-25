@@ -7,22 +7,22 @@ echo on
 set cb=%cd%\tstRMI.jar
 
 if [%1] NEQ [] goto conclientes
-estresador 20 -Djava.rmi.server.codebase=file:%cb% -jar %cb% TstLibroOnline localhost 200
+estresador 20 -Djava.rmi.server.codebase=file:%cb% -jar %cb% TstMyCalculator localhost 200
 goto fin
 
 :conclientes
 
 if [%2] NEQ [] goto consolicitudes
-estresador %1 -Djava.rmi.server.codebase=file:%cb% -jar %cb% TstLibroOnline localhost 200
+estresador %1 -Djava.rmi.server.codebase=file:%cb% -jar %cb% TstMyCalculator localhost 200
 goto fin
 
 :consolicitudes
 if [%3] NEQ [] goto conHost
-estresador %1 -Djava.rmi.server.codebase=file:%cb% -jar %cb% TstLibroOnline localhost %2
+estresador %1 -Djava.rmi.server.codebase=file:%cb% -jar %cb% TstMyCalculator localhost %2
 goto fin
 
 :conHost
-estresador %1 -Djava.rmi.server.codebase=file:///%cb% -jar %cb% TstLibroOnline %3 %2
+estresador %1 -Djava.rmi.server.codebase=file:///%cb% -jar %cb% TstMyCalculator %3 %2
 
 
 :fin

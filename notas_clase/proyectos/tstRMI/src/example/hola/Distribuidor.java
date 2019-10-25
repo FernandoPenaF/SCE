@@ -44,6 +44,7 @@ public class Distribuidor
             if( args[0].compareToIgnoreCase("ServidorDeDisparo") == 0) ServidorDeDisparo.main( argsPar );
             if( args[0].compareToIgnoreCase("TstWSSuma") == 0) TstWSSuma.main( argsPar );
             if( args[0].compareToIgnoreCase("TstLibroOnline") == 0) TstLibroOnline.main( argsPar );
+            if( args[0].compareToIgnoreCase("TstMyCalculator") == 0) TstMyCalculator.main( argsPar );
         }
         
         

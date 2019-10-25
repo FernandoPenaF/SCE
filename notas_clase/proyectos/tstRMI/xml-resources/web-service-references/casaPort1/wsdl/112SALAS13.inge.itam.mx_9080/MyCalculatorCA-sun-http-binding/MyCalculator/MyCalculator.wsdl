@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xml.netbeans.org/schema/MyCalculatorSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MyCalculator" targetNamespace="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator">
+            <xsd:import namespace="http://xml.netbeans.org/schema/MyCalculatorSchema" schemaLocation="MyCalculatorSchema.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="operationRequest">
+        <part element="ns:myInput" name="part1"/>
+    </message>
+    <message name="operationResponse">
+        <part element="ns:myOutput" name="part1"/>
+    </message>
+    <message name="operationFault">
+        <part element="ns:myFault" name="part1"/>
+    </message>
+    <portType name="MyCalculatorPortType">
+        <operation name="additionOperation">
+            <input message="tns:operationRequest" name="input1"/>
+            <output message="tns:operationResponse" name="output1"/>
+        </operation>
+        <operation name="subtractionOperation">
+            <input message="tns:operationRequest" name="input2"/>
+            <output message="tns:operationResponse" name="output2"/>
+        </operation>
+        <operation name="multiplicationOperation">
+            <input message="tns:operationRequest" name="input3"/>
+            <output message="tns:operationResponse" name="output3"/>
+        </operation>
+        <operation name="divisionOperation">
+            <input message="tns:operationRequest" name="input4"/>
+            <output message="tns:operationResponse" name="output4"/>
+            <fault message="tns:operationFault" name="fault1"/>
+        </operation>
+    </portType>
+    <plnk:partnerLinkType name="MyCalculator">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="MyCalculatorPortTypeRole" portType="tns:MyCalculatorPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

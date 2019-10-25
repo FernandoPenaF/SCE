@@ -4,4 +4,7 @@
     <system systemId="http://148.205.133.96:8080/WebPrj_00/WSSuma?xsd=1" uri="xml-resources/web-service-references/WSSuma/wsdl/148.205.133.96_8080/WebPrj_00/WSSuma.xsd_1.xsd"/>
     <system systemId="http://localhost:43095/TiendaElectronica/AlmacenService?WSDL" uri="xml-resources/web-service-references/AlmacenService/wsdl/localhost_43095/TiendaElectronica/AlmacenService.wsdl"/>
     <system systemId="http://localhost:43095/TiendaElectronica/AlmacenService?xsd=1" uri="xml-resources/web-service-references/AlmacenService/wsdl/localhost_43095/TiendaElectronica/AlmacenService.xsd_1.xsd"/>
+    <system systemId="http://localhost:9080/MyCalculatorCAService1/casaPort1?WSDL" uri="xml-resources/web-service-references/casaPort1/wsdl/localhost_9080/MyCalculatorCAService1/casaPort1.wsdl"/>
+    <system systemId="http://112SALAS13.inge.itam.mx:9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculator.wsdl" uri="xml-resources/web-service-references/casaPort1/wsdl/112SALAS13.inge.itam.mx_9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculator.wsdl"/>
+    <system systemId="http://112SALAS13.inge.itam.mx:9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculatorSchema.xsd" uri="xml-resources/web-service-references/casaPort1/wsdl/112SALAS13.inge.itam.mx_9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculatorSchema.xsd"/>
 </catalog>

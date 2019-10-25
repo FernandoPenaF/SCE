@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="MyCalculatorCA" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="MyCalculatorCA">
+  <import location="http://112SALAS13.inge.itam.mx:9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculator.wsdl" namespace="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator">
+    </import>
+  <portType name="dummyCasaPortType">
+  </portType>
+  <binding name="casaBinding1" type="ns:MyCalculatorPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="additionOperation">
+      <soap:operation soapAction="addition" style="document"/>
+      <input name="input1">
+        <soap:body use="literal"/>
+      </input>
+      <output name="output1">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="subtractionOperation">
+      <soap:operation soapAction="subtraction" style="document"/>
+      <input name="input2">
+        <soap:body use="literal"/>
+      </input>
+      <output name="output2">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="multiplicationOperation">
+      <soap:operation soapAction="multiplication" style="document"/>
+      <input name="input3">
+        <soap:body use="literal"/>
+      </input>
+      <output name="output3">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="divisionOperation">
+      <soap:operation soapAction="division" style="document"/>
+      <input name="input4">
+        <soap:body use="literal"/>
+      </input>
+      <output name="output4">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault1">
+        <soap:fault name="fault1" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="MyCalculatorCAService1">
+    <port binding="tns:casaBinding1" name="casaPort1">
+      <soap:address location="http://112SALAS13.inge.itam.mx:9080/MyCalculatorCAService1/casaPort1"/>
+    </port>
+  </service>
+</definitions>
