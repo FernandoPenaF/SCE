@@ -53,6 +53,18 @@
                 <soap:fault name="fault1" use="literal"/>
             </fault>
         </operation>
+        <operation name="moduloOperation">
+            <soap:operation style="document" soapAction="modulo"/>
+            <input name="input5">
+                <soap:body use="literal"/>
+            </input>
+            <output name="output5">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault2">
+                <soap:fault name="fault2" use="literal"/>
+            </fault>
+        </operation>
     </binding>
     <service name="MyCalculatorCAService1">
         <port name="casaPort1" binding="tns:casaBinding1">

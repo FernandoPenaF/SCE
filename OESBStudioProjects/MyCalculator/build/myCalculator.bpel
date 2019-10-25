@@ -15,6 +15,9 @@
         <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" partnerLinkType="tns:MyCalculator" myRole="MyCalculatorPortTypeRole"/>
     </partnerLinks>
     <variables>
+        <variable name="Fault2FaultVar" xmlns:tns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" messageType="tns:operationFault"/>
+        <variable name="ModuloOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" messageType="tns:operationResponse"/>
+        <variable name="ModuloOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" messageType="tns:operationRequest"/>
         <variable name="Fault1FaultVar" xmlns:tns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" messageType="tns:operationFault"/>
         <variable name="DivisionOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" messageType="tns:operationResponse"/>
         <variable name="DivisionOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" messageType="tns:operationRequest"/>
@@ -80,7 +83,32 @@
                                     <to>$Fault1FaultVar.part1/ns0:faultDetail</to>
                                 </copy>
                             </assign>
-                            <reply name="Reply5" partnerLink="PartnerLink1" operation="divisionOperation" portType="tns:MyCalculatorPortType" faultName="tns:fault1" variable="Fault1FaultVar"/>
+                            <reply name="Reply5" partnerLink="PartnerLink1" operation="divisionOperation" portType="tns:MyCalculatorPortType" faultName="tns:fault2" variable="Fault1FaultVar"/>
+                        </sequence>
+                    </else>
+                </if>
+            </onMessage>
+            <onMessage partnerLink="PartnerLink1" operation="moduloOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" portType="tns:MyCalculatorPortType" variable="ModuloOperationIn">
+                <if name="If2">
+                    <condition>$ModuloOperationIn.part1/ns0:param02 != 0</condition>
+                    <sequence name="Sequence6">
+                        <assign name="Assign6">
+                            <copy>
+                                <from>$ModuloOperationIn.part1/ns0:param01 mod $ModuloOperationIn.part1/ns0:param02</from>
+                                <to>$ModuloOperationOut.part1/ns0:response01</to>
+                            </copy>
+                        </assign>
+                        <reply name="Reply6" partnerLink="PartnerLink1" operation="moduloOperation" portType="tns:MyCalculatorPortType" variable="ModuloOperationOut"/>
+                    </sequence>
+                    <else>
+                        <sequence name="Sequence7">
+                            <assign name="Assign7">
+                                <copy>
+                                    <from>'The denominator cannot be equals to zero.'</from>
+                                    <to>$Fault2FaultVar.part1/ns0:faultDetail</to>
+                                </copy>
+                            </assign>
+                            <reply name="Reply7" partnerLink="PartnerLink1" operation="moduloOperation" portType="tns:MyCalculatorPortType" faultName="tns:fault2" variable="Fault2FaultVar"/>
                         </sequence>
                     </else>
                 </if>
