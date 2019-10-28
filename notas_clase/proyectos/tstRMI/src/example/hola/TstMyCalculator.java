@@ -75,7 +75,7 @@ public class TstMyCalculator {
                         System.out.println("Clte " + lngQuienSoy + ": "  + a + " / " + b + " = " + c);
                     break;
                     case 5:
-                        t0 = System.currentTimeMillis();  
+                        t0 = System.currentTimeMillis();
                         c = (int) port.moduloOperation(part1).getResponse01();
                         t1 = System.currentTimeMillis();
                         System.out.println("Clte " + lngQuienSoy + ": "  + a + " % " + b + " = " + c);

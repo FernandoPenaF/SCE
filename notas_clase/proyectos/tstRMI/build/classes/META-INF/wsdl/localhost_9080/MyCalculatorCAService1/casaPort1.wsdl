@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="MyCalculatorCA" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="MyCalculatorCA">
-  <import location="http://112SALAS13.inge.itam.mx:9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculator.wsdl" namespace="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator">
+  <import location="http://112SALAS15.inge.itam.mx:9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculator.wsdl" namespace="http://j2ee.netbeans.org/wsdl/MyCalculator/src/MyCalculator">
     </import>
   <portType name="dummyCasaPortType">
   </portType>
@@ -60,7 +60,7 @@
   </binding>
   <service name="MyCalculatorCAService1">
     <port binding="tns:casaBinding1" name="casaPort1">
-      <soap:address location="http://112SALAS13.inge.itam.mx:9080/MyCalculatorCAService1/casaPort1"/>
+      <soap:address location="http://112SALAS15.inge.itam.mx:9080/MyCalculatorCAService1/casaPort1"/>
     </port>
   </service>
 </definitions>

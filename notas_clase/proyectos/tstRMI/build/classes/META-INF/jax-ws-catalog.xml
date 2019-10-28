@@ -7,4 +7,6 @@
     <system systemId="http://localhost:9080/MyCalculatorCAService1/casaPort1?WSDL" uri="wsdl/localhost_9080/MyCalculatorCAService1/casaPort1.wsdl"/>
     <system systemId="http://112SALAS13.inge.itam.mx:9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculator.wsdl" uri="wsdl/112SALAS13.inge.itam.mx_9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculator.wsdl"/>
     <system systemId="http://112SALAS13.inge.itam.mx:9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculatorSchema.xsd" uri="wsdl/112SALAS13.inge.itam.mx_9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculatorSchema.xsd"/>
+    <system systemId="http://112SALAS15.inge.itam.mx:9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculator.wsdl" uri="wsdl/112SALAS15.inge.itam.mx_9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculator.wsdl"/>
+    <system systemId="http://112SALAS15.inge.itam.mx:9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculatorSchema.xsd" uri="wsdl/112SALAS15.inge.itam.mx_9080/MyCalculatorCA-sun-http-binding/MyCalculator/MyCalculatorSchema.xsd"/>
 </catalog>
