@@ -13,14 +13,14 @@ import java.lang.reflect.Method;
  */
 public class Distribuidor {
     public static void main(String args[]) {
-        System.out.println("Distribuidor, inciando con:");
-        if(args.length == 0){
-            System.out.println("Sin argumentos");
-        } else {
-            for(int i = 0; i < args.length; i++){
-                System.out.println("args[" + i + "]:" + args[i]);
-            }
-        }
+//        System.out.println("Distribuidor, inciando con:");
+//        if(args.length == 0){
+//            System.out.println("Sin argumentos");
+//        } else {
+//            for(int i = 0; i < args.length; i++){
+//                System.out.println("args[" + i + "]:" + args[i]);
+//            }
+//        }
 
         String[] argsPar = new String[0];
         
