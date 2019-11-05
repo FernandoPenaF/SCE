@@ -1,0 +1,8 @@
+sep 23, 2018 6:00:46 PM tstlogger.UseLogger doSomeThingAndLog
+GRAVE: Info Log
+sep 23, 2018 6:00:46 PM tstlogger.UseLogger doSomeThingAndLog
+GRAVE: Info Log
+sep 23, 2018 6:00:46 PM tstlogger.UseLogger doSomeThingAndLog
+ADVERTENCIA: Info Log
+sep 23, 2018 6:00:46 PM tstlogger.UseLogger doSomeThingAndLog
+INFORMACIÓN: Info Log
