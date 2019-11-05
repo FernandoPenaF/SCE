@@ -423,7 +423,7 @@ public class ClsConexion
     public static void main(String[] args)
     {
        //System.out.println("Hola...");
-        int intPrueba[] = {1,2,9,10,11};
+        int intPrueba[] = {1,2,9,10,11, 6};
         int i,n = intPrueba.length;
         ResultSet r = null;
         java.util.TreeMap<String,ClsCampoBD> colCampos = null;
@@ -482,14 +482,13 @@ public class ClsConexion
                          break;
                    case 6:
                          colCampos = new TreeMap<String,ClsCampoBD>();
-                         colCampos.put("apPaterno",
-                                        new ClsCampoBD("apPaterno","apPaternoNo. " + i,ClsCampoBD.TIPO_VARCHAR,"")); 
-                         colCampos.put("apMaterno",
-                                        new ClsCampoBD("apMaterno","apMaternoNo. " + i,ClsCampoBD.TIPO_VARCHAR,"")); 
-                         colCampos.put("nombre",
-                                        new ClsCampoBD("nombre","Número "+ i,ClsCampoBD.TIPO_VARCHAR,"")); 
-                         colCampos.put("clvAlumno",new ClsCampoBD("clvAlumno","1000"+i,ClsCampoBD.TIPO_VARCHAR,"")); 
-                         c.insertaReg("tblAlumnos",colCampos );
+                         colCampos.put("clvUsuario",
+                                        new ClsCampoBD("clvUsuario","Fernando",ClsCampoBD.TIPO_VARCHAR,"")); 
+                         colCampos.put("nombreUsuario",
+                                        new ClsCampoBD("nombreUsuario","Fernando",ClsCampoBD.TIPO_VARCHAR,"")); 
+                         colCampos.put("contrasenha",
+                                        new ClsCampoBD("contrasenha","odnanref",ClsCampoBD.TIPO_VARCHAR,"")); 
+                         c.insertaReg("tblUsuarios",colCampos );
                          //System.out.println(c.impRS(r));
                          break;
                    case 7:

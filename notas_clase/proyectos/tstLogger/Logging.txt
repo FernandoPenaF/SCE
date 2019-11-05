@@ -1,8 +1,8 @@
-sep 23, 2018 6:00:46 PM tstlogger.UseLogger doSomeThingAndLog
-GRAVE: Info Log
-sep 23, 2018 6:00:46 PM tstlogger.UseLogger doSomeThingAndLog
-GRAVE: Info Log
-sep 23, 2018 6:00:46 PM tstlogger.UseLogger doSomeThingAndLog
-ADVERTENCIA: Info Log
-sep 23, 2018 6:00:46 PM tstlogger.UseLogger doSomeThingAndLog
-INFORMACIÓN: Info Log
+nov 05, 2019 11:50:34 AM tstlogger.UseLogger doSomeThingAndLog
+GRAVE: Este es realmente severo!!!!
+nov 05, 2019 11:50:34 AM tstlogger.UseLogger doSomeThingAndLog
+GRAVE: Severo!!!!
+nov 05, 2019 11:50:34 AM tstlogger.UseLogger doSomeThingAndLog
+ADVERTENCIA: Advertencia!!
+nov 05, 2019 11:50:34 AM tstlogger.UseLogger doSomeThingAndLog
+INFORMACIÓN: Info

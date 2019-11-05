@@ -29,17 +29,17 @@ public class UseLogger {
 
         // set the LogLevel to Severe, only severe Messages will be written
         LOGGER.setLevel(Level.SEVERE);
-        LOGGER.severe("Info Log");
-        LOGGER.warning("Info Log");
-        LOGGER.info("Info Log");
+        LOGGER.severe("Este es realmente severo!!!!");
+        LOGGER.warning("Este es de advertencia!!");
+        LOGGER.info("Este es un mensaje informativo");
         LOGGER.finest("Really not important");
 
         // set the LogLevel to Info, severe, warning and info will be written
         // finest is still not written
         LOGGER.setLevel(Level.INFO);
-        LOGGER.severe("Info Log");
-        LOGGER.warning("Info Log");
-                LOGGER.info("Info Log");
+        LOGGER.severe("Severo!!!!");
+        LOGGER.warning("Advertencia!!");
+        LOGGER.info("Info");
         LOGGER.finest("Really not important");
     }
 
