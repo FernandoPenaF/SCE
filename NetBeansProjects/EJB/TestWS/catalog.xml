@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/WSPagos/WSPagos?WSDL" uri="xml-resources/web-service-references/WSPagos/wsdl/localhost_8080/WSPagos/WSPagos.wsdl"/>
+    <system systemId="http://localhost:8080/WSPagos/WSPagos?xsd=1" uri="xml-resources/web-service-references/WSPagos/wsdl/localhost_8080/WSPagos/WSPagos.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WSEnvios/WSEnvios?WSDL" uri="xml-resources/web-service-references/WSEnvios/wsdl/localhost_8080/WSEnvios/WSEnvios.wsdl"/>
+    <system systemId="http://localhost:8080/WSEnvios/WSEnvios?xsd=1" uri="xml-resources/web-service-references/WSEnvios/wsdl/localhost_8080/WSEnvios/WSEnvios.xsd_1.xsd"/>
+</catalog>
