@@ -5,6 +5,7 @@
  */
 package ejbpagos;
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.jws.WebService;
@@ -62,5 +63,32 @@ public class WSPagos {
     public int count() {
         return ejbRef.count();
     }
+//
+    // ======================== Para cobrarle a la TDC ========================
+    //  regresa:
+    //              true (OK)
+    //              false (No se pudo cobrar porque no hay tal TDC o no tiene fondos...)
+    //
     
+   @WebMethod(operationName = "PagoConTDC")
+    public boolean PagoConTDC(@WebParam(name = "intTDC") int intTDC, @WebParam(name = "dblMonto") double dblMonto) {
+        boolean blnRes = false;    
+        BigDecimal disponible,monto;
+        monto = BigDecimal.valueOf(dblMonto);
+        Tdc tdc = ejbRef.find(intTDC);
+        
+        if(tdc != null){
+            if(tdc.getTdcId()== intTDC){   
+                disponible = tdc.getLdc();
+                if(disponible.compareTo(monto) >= 0){
+                    disponible = disponible.subtract(monto);
+                    tdc.setLdc(disponible);
+                    ejbRef.edit(tdc);
+                    blnRes = true;
+                }    
+            }
+        }
+        
+        return blnRes;
+    }
 }
