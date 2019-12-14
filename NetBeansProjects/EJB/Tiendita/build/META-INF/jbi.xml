@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/Tiendita/tiendita" xmlns:ns1="http://j2ee.netbeans.org/wsdl/Tiendita/DescriptorWSDL/TienditaWSDL" xmlns:ns2="http://web/" xmlns:ns3="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
+    <services binding-component="false">
+        <provides endpoint-name="TienditaWSDLPortTypeRole_myRole" interface-name="ns1:TienditaWSDLPortType" service-name="ns0:Tienda">
+            <ns3:display-name>Tienda</ns3:display-name>
+            <ns3:process-name>tiendita</ns3:process-name>
+            <ns3:file-path>tiendita.bpel</ns3:file-path>
+        </provides>
+        <consumes endpoint-name="WSAlmacenRole_partnerRole" interface-name="ns2:WSAlmacen" service-name="ns0:Almacen">
+            <ns3:display-name>Almacen</ns3:display-name>
+            <ns3:process-name>tiendita</ns3:process-name>
+            <ns3:file-path>tiendita.bpel</ns3:file-path>
+        </consumes>
+        <consumes endpoint-name="WSEnviosRole_partnerRole" interface-name="ns2:WSEnvios" service-name="ns0:Envios">
+            <ns3:display-name>Envios</ns3:display-name>
+            <ns3:process-name>tiendita</ns3:process-name>
+            <ns3:file-path>tiendita.bpel</ns3:file-path>
+        </consumes>
+        <consumes endpoint-name="WSOrdenCompraRole_partnerRole" interface-name="ns2:WSOrdenCompra" service-name="ns0:Orden">
+            <ns3:display-name>Orden</ns3:display-name>
+            <ns3:process-name>tiendita</ns3:process-name>
+            <ns3:file-path>tiendita.bpel</ns3:file-path>
+        </consumes>
+        <consumes endpoint-name="WSPagosRole_partnerRole" interface-name="ns2:WSPagos" service-name="ns0:Pagos">
+            <ns3:display-name>Pagos</ns3:display-name>
+            <ns3:process-name>tiendita</ns3:process-name>
+            <ns3:file-path>tiendita.bpel</ns3:file-path>
+        </consumes>
+    </services>
+</jbi>

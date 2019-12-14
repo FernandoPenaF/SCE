@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://web/" xmlns:ns2="http://j2ee.netbeans.org/wsdl/Bypass/src/DescriptorWSDL" xmlns:ns3="http://enterprise.netbeans.org/bpel/Bypass/bypass" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="WSPagosPort" interface-name="ns1:WSPagos" name="endpoint1" service-name="ns1:WSPagos"/>
+        <endpoint endpoint-name="DescriptorWSDLPort" interface-name="ns2:DescriptorWSDLPortType" name="endpoint2" service-name="ns2:DescriptorWSDLService"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="DescriptorWSDLPortTypeRole_myRole" file-path="bypass.bpel" interface-name="ns2:DescriptorWSDLPortType" name="endpoint3" process-name="bypass" service-name="ns3:PartnerLink1"/>
+        <endpoint display-name="Pago" endpoint-name="WSPagosRole_partnerRole" file-path="bypass.bpel" interface-name="ns1:WSPagos" name="endpoint4" process-name="bypass" service-name="ns3:Pago"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="Bypass.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="BypassCA-Bypass" unit-name="Bypass" unknown="false" x="-1" y="-1">
+            <provides endpoint="endpoint3"/>
+            <consumes endpoint="endpoint4"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="BypassCA-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port x="0" y="-1">
+                    <link xlink:href="../jbiServiceUnits/Bypass/DescriptorWSDL.wsdl#xpointer(/definitions/service[@name='DescriptorWSDLService']/port[@name='DescriptorWSDLPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port x="0" y="-1">
+                    <link xlink:href="../jbiServiceUnits/Bypass/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/service[@name='WSPagos']/port[@name='WSPagosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint2" mode="" provider="endpoint3" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint4" mode="" provider="endpoint1" route-type="" routing-rule="" state="unchanged"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiServiceUnits/Bypass/DescriptorWSDL.wsdl#xpointer(/definitions/portType[@name='DescriptorWSDLPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bypass/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/portType[@name='WSPagos'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiServiceUnits/Bypass/DescriptorWSDL.wsdl#xpointer(/definitions/binding[@name='DescriptorWSDLBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bypass/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/binding[@name='WSPagosPortBinding'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiServiceUnits/Bypass/DescriptorWSDL.wsdl#xpointer(/definitions/service[@name='DescriptorWSDLService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Bypass/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/service[@name='WSPagos'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

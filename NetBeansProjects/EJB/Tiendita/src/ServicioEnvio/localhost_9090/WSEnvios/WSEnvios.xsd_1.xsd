@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://web/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://web/">
+
+<xs:element name="altaSolicitudDeEnvio" type="tns:altaSolicitudDeEnvio"/>
+
+<xs:element name="altaSolicitudDeEnvioResponse" type="tns:altaSolicitudDeEnvioResponse"/>
+
+<xs:element name="count" type="tns:count"/>
+
+<xs:element name="countResponse" type="tns:countResponse"/>
+
+<xs:element name="create" type="tns:create"/>
+
+<xs:element name="edit" type="tns:edit"/>
+
+<xs:element name="find" type="tns:find"/>
+
+<xs:element name="findAll" type="tns:findAll"/>
+
+<xs:element name="findAllResponse" type="tns:findAllResponse"/>
+
+<xs:element name="findRange" type="tns:findRange"/>
+
+<xs:element name="findRangeResponse" type="tns:findRangeResponse"/>
+
+<xs:element name="findResponse" type="tns:findResponse"/>
+
+<xs:element name="registro" type="tns:registro"/>
+
+<xs:element name="remove" type="tns:remove"/>
+
+<xs:complexType name="edit">
+<xs:sequence>
+<xs:element name="entity" type="tns:registro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registro">
+<xs:sequence>
+<xs:element name="customerId" type="xs:int"/>
+<xs:element name="entregaId" type="xs:int" minOccurs="0"/>
+<xs:element name="fechaEntregado" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaPrometida" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="ordenCompra" type="xs:int"/>
+<xs:element name="status" type="xs:unsignedShort" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="find">
+<xs:sequence>
+<xs:element name="id" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:registro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRange">
+<xs:sequence>
+<xs:element name="range" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:registro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="count">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="countResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="create">
+<xs:sequence>
+<xs:element name="entity" type="tns:registro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaSolicitudDeEnvio">
+<xs:sequence>
+<xs:element name="Customer_ID" type="xs:int"/>
+<xs:element name="Orden_Compra" type="xs:int"/>
+<xs:element name="Status" type="xs:unsignedShort"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaSolicitudDeEnvioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:registro" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="remove">
+<xs:sequence>
+<xs:element name="entity" type="tns:registro" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

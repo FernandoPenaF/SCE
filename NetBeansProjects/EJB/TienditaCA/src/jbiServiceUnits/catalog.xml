@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:9090/WSAlmacen/WSAlmacen?WSDL" uri="../Tiendita/ServicioAlmacen/localhost_9090/WSAlmacen/WSAlmacen.wsdl"/>
+    <system systemId="http://localhost:9090/WSAlmacen/WSAlmacen?xsd=1" uri="../Tiendita/ServicioAlmacen/localhost_9090/WSAlmacen/WSAlmacen.xsd_1.xsd"/>
+    <system systemId="http://localhost:9090/WSOrdenCompra/WSOrdenCompra?WSDL" uri="../Tiendita/ServicioAlmacen/localhost_9090/WSOrdenCompra/WSOrdenCompra.wsdl"/>
+    <system systemId="http://localhost:9090/WSOrdenCompra/WSOrdenCompra?xsd=1" uri="../Tiendita/ServicioAlmacen/localhost_9090/WSOrdenCompra/WSOrdenCompra.xsd_1.xsd"/>
+    <system systemId="http://localhost:9090/WSEnvios/WSEnvios?WSDL" uri="../Tiendita/ServicioEnvio/localhost_9090/WSEnvios/WSEnvios.wsdl"/>
+    <system systemId="http://localhost:9090/WSEnvios/WSEnvios?xsd=1" uri="../Tiendita/ServicioEnvio/localhost_9090/WSEnvios/WSEnvios.xsd_1.xsd"/>
+    <system systemId="http://localhost:9090/WSPagos/WSPagos?WSDL" uri="../Tiendita/ServicioPago/localhost_9090/WSPagos/WSPagos.wsdl"/>
+    <system systemId="http://localhost:9090/WSPagos/WSPagos?xsd=1" uri="../Tiendita/ServicioPago/localhost_9090/WSPagos/WSPagos.xsd_1.xsd"/>
+</catalog>

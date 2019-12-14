@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:9090/WSPagos/WSPagos?WSDL" uri="../Bypass/localhost_9090/WSPagos/WSPagos.wsdl"/>
+    <system systemId="http://localhost:9090/WSPagos/WSPagos?xsd=1" uri="../Bypass/localhost_9090/WSPagos/WSPagos.xsd_1.xsd"/>
+</catalog>

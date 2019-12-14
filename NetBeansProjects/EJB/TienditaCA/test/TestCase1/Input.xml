@@ -1,0 +1,9 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tien="http://j2ee.netbeans.org/wsdl/Tiendita/DescriptorWSDL/TienditaWSDL">
+  <soapenv:Body>
+    <tien:TienditaWSDLOperation>
+      <CUSTOMER_ID>001</CUSTOMER_ID>
+      <PRODUCT_ID>980032</PRODUCT_ID>
+      <QUANTITY>2</QUANTITY>
+    </tien:TienditaWSDLOperation>
+  </soapenv:Body>
+</soapenv:Envelope>

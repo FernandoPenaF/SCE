@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/Tiendita/tiendita" xmlns:ns2="http://web/" xmlns:ns3="http://j2ee.netbeans.org/wsdl/Tiendita/DescriptorWSDL/TienditaWSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/jbi ./jbi.xsd">
+    <service-assembly>
+        <identification>
+            <name>TienditaCA</name>
+            <description>Represents the Service Assembly of TienditaCA</description>
+        </identification>
+        <service-unit>
+            <identification>
+                <name>TienditaCA-Tiendita</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>Tiendita.jar</artifacts-zip>
+                <component-name>sun-bpel-engine</component-name>
+            </target>
+        </service-unit>
+        <service-unit>
+            <identification>
+                <name>TienditaCA-sun-http-binding</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>sun-http-binding.jar</artifacts-zip>
+                <component-name>sun-http-binding</component-name>
+            </target>
+        </service-unit>
+        <connections>
+            <connection>
+                <consumer endpoint-name="WSAlmacenRole_partnerRole" service-name="ns1:Almacen"/>
+                <provider endpoint-name="WSAlmacenPort" service-name="ns2:WSAlmacen"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="TienditaWSDLPort" service-name="ns3:TienditaWSDLService"/>
+                <provider endpoint-name="TienditaWSDLPortTypeRole_myRole" service-name="ns1:Tienda"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="WSOrdenCompraRole_partnerRole" service-name="ns1:Orden"/>
+                <provider endpoint-name="WSOrdenCompraPort" service-name="ns2:WSOrdenCompra"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="WSPagosRole_partnerRole" service-name="ns1:Pagos"/>
+                <provider endpoint-name="WSPagosPort" service-name="ns2:WSPagos"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="WSEnviosRole_partnerRole" service-name="ns1:Envios"/>
+                <provider endpoint-name="WSEnviosPort" service-name="ns2:WSEnvios"/>
+            </connection>
+        </connections>
+        <route-types xmlns="http://www.open-esb.net/xml/ns/jbi">
+            <source endpoint-name="WSAlmacenRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:Almacen">direct</source>
+            <source endpoint-name="TienditaWSDLPort" mode="local" routing-rule="default" service-name="ns3:TienditaWSDLService">direct</source>
+            <source endpoint-name="WSOrdenCompraRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:Orden">direct</source>
+            <source endpoint-name="WSPagosRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:Pagos">direct</source>
+            <source endpoint-name="WSEnviosRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:Envios">direct</source>
+        </route-types>
+        <interface-mapping xmlns="http://www.open-esb.net/xml/ns/jbi">
+            <implementation>
+                <by-provider endpoint-name="TienditaWSDLPortTypeRole_myRole" service-name="ns1:Tienda"/>
+                <interface name="ns3:TienditaWSDLPortType"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="WSAlmacenPort" service-name="ns2:WSAlmacen"/>
+                <interface name="ns2:WSAlmacen"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="WSOrdenCompraPort" service-name="ns2:WSOrdenCompra"/>
+                <interface name="ns2:WSOrdenCompra"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="WSPagosPort" service-name="ns2:WSPagos"/>
+                <interface name="ns2:WSPagos"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="WSEnviosPort" service-name="ns2:WSEnvios"/>
+                <interface name="ns2:WSEnvios"/>
+            </implementation>
+        </interface-mapping>
+    </service-assembly>
+</jbi>

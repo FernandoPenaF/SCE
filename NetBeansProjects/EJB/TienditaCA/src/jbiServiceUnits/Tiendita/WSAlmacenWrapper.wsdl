@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSAlmacenWrapper" targetNamespace="http://enterprise.netbeans.org/bpel/WSAlmacenWrapper" xmlns:tns="http://enterprise.netbeans.org/bpel/WSAlmacenWrapper" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns="http://web/">
+    <import location="http://localhost:9090/WSAlmacen/WSAlmacen?WSDL" namespace="http://web/"/>
+    <plnk:partnerLinkType name="WSAlmacenLinkType">
+        <plnk:role name="WSAlmacenRole" portType="ns:WSAlmacen"/>
+    </plnk:partnerLinkType>
+</definitions>

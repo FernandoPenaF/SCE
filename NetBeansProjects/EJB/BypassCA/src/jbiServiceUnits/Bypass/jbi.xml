@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/Bypass/bypass" xmlns:ns1="http://web/" xmlns:ns2="http://j2ee.netbeans.org/wsdl/Bypass/src/DescriptorWSDL" xmlns:ns3="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
+    <services binding-component="false">
+        <provides endpoint-name="DescriptorWSDLPortTypeRole_myRole" interface-name="ns2:DescriptorWSDLPortType" service-name="ns0:PartnerLink1">
+            <ns3:display-name>PartnerLink1</ns3:display-name>
+            <ns3:process-name>bypass</ns3:process-name>
+            <ns3:file-path>bypass.bpel</ns3:file-path>
+        </provides>
+        <consumes endpoint-name="WSPagosRole_partnerRole" interface-name="ns1:WSPagos" service-name="ns0:Pago">
+            <ns3:display-name>Pago</ns3:display-name>
+            <ns3:process-name>bypass</ns3:process-name>
+            <ns3:file-path>bypass.bpel</ns3:file-path>
+        </consumes>
+    </services>
+</jbi>

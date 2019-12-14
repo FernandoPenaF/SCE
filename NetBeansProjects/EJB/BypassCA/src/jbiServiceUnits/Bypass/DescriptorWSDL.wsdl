@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="DescriptorWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/Bypass/src/DescriptorWSDL"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/Bypass/src/DescriptorWSDL" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types/>
+    <message name="DescriptorWSDLOperationRequest">
+        <part name="tarjeta" type="xsd:int"/>
+        <part name="monto" type="xsd:double"/>
+    </message>
+    <message name="DescriptorWSDLOperationResponse">
+        <part name="response" type="xsd:string"/>
+    </message>
+    <portType name="DescriptorWSDLPortType">
+        <operation name="DescriptorWSDLOperation">
+            <input name="input1" message="tns:DescriptorWSDLOperationRequest"/>
+            <output name="output1" message="tns:DescriptorWSDLOperationResponse"/>
+        </operation>
+    </portType>
+    <binding name="DescriptorWSDLBinding" type="tns:DescriptorWSDLPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="DescriptorWSDLOperation">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/Bypass/src/DescriptorWSDL"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/Bypass/src/DescriptorWSDL"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="DescriptorWSDLService">
+        <port name="DescriptorWSDLPort" binding="tns:DescriptorWSDLBinding">
+            <soap:address location="http://localhost:${HttpDefaultPort}/DescriptorWSDLService/DescriptorWSDLPort"/>
+        </port>
+    </service>
+    <plnk:partnerLinkType name="DescriptorWSDL">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="DescriptorWSDLPortTypeRole" portType="tns:DescriptorWSDLPortType"/>
+    </plnk:partnerLinkType>
+</definitions>
