@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="WSAlmacen">
+      <implementation-class>ejbalmacen.WSAlmacen</implementation-class>
+    </service>
+    <service name="WSOrdenCompra">
+      <implementation-class>ejbalmacen.WSOrdenCompra</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>
