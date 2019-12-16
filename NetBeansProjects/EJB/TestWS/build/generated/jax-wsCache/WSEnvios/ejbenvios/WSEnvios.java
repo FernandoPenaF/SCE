@@ -91,6 +91,18 @@ public interface WSEnvios {
 
     /**
      * 
+     * @param entity
+     */
+    @WebMethod
+    @Oneway
+    @RequestWrapper(localName = "edit", targetNamespace = "http://ejbenvios/", className = "ejbenvios.Edit")
+    @Action(input = "http://ejbenvios/WSEnvios/edit")
+    public void edit(
+        @WebParam(name = "entity", targetNamespace = "")
+        Registro entity);
+
+    /**
+     * 
      * @param customerID
      * @param ordenCompra
      * @param status
@@ -109,18 +121,6 @@ public interface WSEnvios {
         int ordenCompra,
         @WebParam(name = "Status", targetNamespace = "")
         int status);
-
-    /**
-     * 
-     * @param entity
-     */
-    @WebMethod
-    @Oneway
-    @RequestWrapper(localName = "edit", targetNamespace = "http://ejbenvios/", className = "ejbenvios.Edit")
-    @Action(input = "http://ejbenvios/WSEnvios/edit")
-    public void edit(
-        @WebParam(name = "entity", targetNamespace = "")
-        Registro entity);
 
     /**
      * 

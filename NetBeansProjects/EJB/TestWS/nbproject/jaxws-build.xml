@@ -50,5 +50,39 @@
         <delete dir="${build.generated.dir}/jax-wsCache/WSEnvios"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/ejbenvios"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-WSPagos, wsimport-client-WSEnvios"/>
+    <target name="wsimport-client-WSAlmacen" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSAlmacen"/>
+        <property name="wsdl-WSAlmacen" location="xml-resources/web-service-references/WSAlmacen/wsdl/localhost_8080/WSAlmacen/WSAlmacen.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSAlmacen" destdir="${build.generated.dir}/jax-wsCache/WSAlmacen" wsdl="${wsdl-WSAlmacen}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSAlmacen/WSAlmacen?WSDL" xnocompile="true" xendorsed="true" package="ejbalmacen">
+            <depends file="${wsdl-WSAlmacen}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSAlmacen"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSAlmacen">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSAlmacen" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WSAlmacen"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/ejbalmacen"/>
+    </target>
+    <target name="wsimport-client-WSOrdenCompra" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSOrdenCompra"/>
+        <property name="wsdl-WSOrdenCompra" location="xml-resources/web-service-references/WSOrdenCompra/wsdl/localhost_8080/WSOrdenCompra/WSOrdenCompra.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSOrdenCompra" destdir="${build.generated.dir}/jax-wsCache/WSOrdenCompra" wsdl="${wsdl-WSOrdenCompra}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSOrdenCompra/WSOrdenCompra?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WSOrdenCompra}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSOrdenCompra"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSOrdenCompra">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSOrdenCompra" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WSOrdenCompra"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/ejbalmacen"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WSPagos, wsimport-client-WSEnvios, wsimport-client-WSAlmacen, wsimport-client-WSOrdenCompra"/>
 </project>

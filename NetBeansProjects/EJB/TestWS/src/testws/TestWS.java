@@ -21,8 +21,16 @@ public class TestWS {
         ejbenvios.WSEnvios_Service serviceE = new ejbenvios.WSEnvios_Service();
         ejbenvios.WSEnvios portE = serviceE.getWSEnviosPort();
         
+        ejbalmacen.WSAlmacen_Service serviceA = new ejbalmacen.WSAlmacen_Service();
+        ejbalmacen.WSAlmacen portA = serviceA.getWSAlmacenPort();
+        
+        ejbalmacen.WSOrdenCompra_Service serviceOC = new ejbalmacen.WSOrdenCompra_Service();
+        ejbalmacen.WSOrdenCompra portOC = serviceOC.getWSOrdenCompraPort();
+        
         System.out.println(portP.count());
         System.out.println(portE.count());
+        System.out.println(portA.count());
+        System.out.println(portOC.count());
     }
 
 }
