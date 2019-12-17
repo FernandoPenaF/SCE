@@ -2,7 +2,7 @@
 <definitions name="TienditaWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL"
     xmlns="http://schemas.xmlsoap.org/wsdl/"
     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
     <types/>
     <message name="TienditaWSDLOperationRequest">
         <part name="idProduct" type="xsd:int"/>
@@ -18,6 +18,23 @@
             <output name="output1" message="tns:TienditaWSDLOperationResponse"/>
         </operation>
     </portType>
+    <binding name="TienditaWSDLPortTypeBinding" type="tns:TienditaWSDLPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="TienditaWSDLOperation">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="TienditaWSDLService">
+        <port name="TienditaWSDLPortTypeBindingPort" binding="tns:TienditaWSDLPortTypeBinding">
+            <soap:address location="http://localhost:${HttpDefaultPort}/service"/>
+        </port>
+    </service>
     <plnk:partnerLinkType name="TienditaWSDL">
         <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
 In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.

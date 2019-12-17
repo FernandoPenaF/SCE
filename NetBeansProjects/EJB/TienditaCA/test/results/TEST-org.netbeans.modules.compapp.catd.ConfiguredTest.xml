@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="112SALAS21" name="org.netbeans.modules.compapp.catd.ConfiguredTest" skipped="0" tests="1" time="5.312" timestamp="2019-12-17T00:50:27">
+<testsuite errors="0" failures="1" hostname="112SALAS21" name="org.netbeans.modules.compapp.catd.ConfiguredTest" skipped="0" tests="1" time="5.218" timestamp="2019-12-17T02:22:16">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="MX" />
@@ -52,7 +52,7 @@
     <property name="libs.jsf12.javadoc" value="C:\Users\LPENAF\Desktop\SCE\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\LPENAF\Desktop\SCE\NetBeansProjects\EJB\TienditaCA\test\results\TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=C:\Users\LPENAF\AppData\Local\Temp\junitvmwatcher3913533680830913410.properties propsfile=C:\Users\LPENAF\AppData\Local\Temp\junit5310395176598127132.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\LPENAF\Desktop\SCE\NetBeansProjects\EJB\TienditaCA\test\results\TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=C:\Users\LPENAF\AppData\Local\Temp\junitvmwatcher8187837164946689453.properties propsfile=C:\Users\LPENAF\AppData\Local\Temp\junit5309237718830340600.properties" />
     <property name="build.classes.dir" value="build/jar" />
     <property name="enterprise.module.install.dir" value="C:\Users\LPENAF\Desktop\SCE\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules" />
     <property name="libs.javaee-endorsed-api-7.0.javadoc" value="C:\Users\LPENAF\Desktop\SCE\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
@@ -337,8 +337,8 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Users\LPENAF\Desktop\SCE\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="org.netbeans.modules.compapp.catd.ConfiguredTest" name="TestCase1" time="5.281">
-    <failure message="[16/12/2019 06:50:33 PM] The response is not identical to the expected output." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: [16/12/2019 06:50:33 PM] The response is not identical to the expected output.
+  <testcase classname="org.netbeans.modules.compapp.catd.ConfiguredTest" name="TestCase1" time="5.187">
+    <failure message="[16/12/2019 08:22:22 PM] The response is not identical to the expected output." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: [16/12/2019 08:22:22 PM] The response is not identical to the expected output.
 	at org.netbeans.modules.compapp.catd.ConfiguredTest.checkExpectedOutput(ConfiguredTest.java:2354)
 	at org.netbeans.modules.compapp.catd.ConfiguredTest.checkExpectedOutput(ConfiguredTest.java:2224)
 	at org.netbeans.modules.compapp.catd.ConfiguredTest.testConcurrentSOAPRequest(ConfiguredTest.java:867)
@@ -392,7 +392,7 @@ sun.cpu.endian=little
 sun.cpu.isalist=amd64
 sun.desktop=windows
 sun.io.unicode.encoding=UnicodeLittle
-sun.java.command=org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\LPENAF\Desktop\SCE\NetBeansProjects\EJB\TienditaCA\test\results\TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=C:\Users\LPENAF\AppData\Local\Temp\junitvmwatcher3913533680830913410.properties propsfile=C:\Users\LPENAF\AppData\Local\Temp\junit5310395176598127132.properties
+sun.java.command=org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\LPENAF\Desktop\SCE\NetBeansProjects\EJB\TienditaCA\test\results\TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=C:\Users\LPENAF\AppData\Local\Temp\junitvmwatcher8187837164946689453.properties propsfile=C:\Users\LPENAF\AppData\Local\Temp\junit5309237718830340600.properties
 sun.java.launcher=SUN_STANDARD
 sun.jnu.encoding=Cp1252
 sun.management.compiler=HotSpot 64-Bit Tiered Compilers

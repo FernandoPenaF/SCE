@@ -22,27 +22,27 @@
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="TienditaCA-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port x="68" y="335">
+                <port x="67" y="355">
                     <link xlink:href="../jbiServiceUnits/Tiendita/DescriptorWSDL/TienditaWSDL.wsdl#xpointer(/definitions/service[@name='TienditaWSDLService']/port[@name='TienditaWSDLPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint5"/>
                     <provides endpoint="endpoint5"/>
                 </port>
-                <port x="68" y="261">
+                <port x="67" y="276">
                     <link xlink:href="../jbiServiceUnits/Tiendita/ServicioAlmacen/localhost_9090/WSAlmacen/WSAlmacen.wsdl#xpointer(/definitions/service[@name='WSAlmacen']/port[@name='WSAlmacenPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
                 </port>
-                <port x="68" y="187">
+                <port x="67" y="197">
                     <link xlink:href="../jbiServiceUnits/Tiendita/ServicioAlmacen/localhost_9090/WSOrdenCompra/WSOrdenCompra.wsdl#xpointer(/definitions/service[@name='WSOrdenCompra']/port[@name='WSOrdenCompraPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint2"/>
                     <provides endpoint="endpoint2"/>
                 </port>
-                <port x="68" y="113">
+                <port x="67" y="118">
                     <link xlink:href="../jbiServiceUnits/Tiendita/ServicioEnvio/localhost_9090/WSEnvios/WSEnvios.wsdl#xpointer(/definitions/service[@name='WSEnvios']/port[@name='WSEnviosPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint4"/>
                     <provides endpoint="endpoint4"/>
                 </port>
-                <port x="68" y="39">
+                <port x="67" y="39">
                     <link xlink:href="../jbiServiceUnits/Tiendita/ServicioPago/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/service[@name='WSPagos']/port[@name='WSPagosPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint3"/>
                     <provides endpoint="endpoint3"/>

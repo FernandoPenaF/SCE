@@ -26,6 +26,135 @@
         <partnerLink name="Pagos" xmlns:tns="http://enterprise.netbeans.org/bpel/WSPagosWrapper" partnerLinkType="tns:WSPagosLinkType" partnerRole="WSPagosRole"/>
         <partnerLink name="Tiendita" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" partnerLinkType="tns:TienditaWSDL" myRole="TienditaWSDLPortTypeRole"/>
     </partnerLinks>
+    <variables>
+        <variable name="TienditaWSDLOperationOut2" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" messageType="tns:TienditaWSDLOperationResponse"/>
+        <variable name="TienditaWSDLOperationOut1" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" messageType="tns:TienditaWSDLOperationResponse"/>
+        <variable name="TienditaWSDLOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" messageType="tns:TienditaWSDLOperationResponse"/>
+        <variable name="ReverseaDescuentaExistenciaOut" xmlns:tns="http://ejbalmacen/" messageType="tns:ReverseaDescuentaExistenciaResponse"/>
+        <variable name="ReverseaDescuentaExistenciaIn" xmlns:tns="http://ejbalmacen/" messageType="tns:ReverseaDescuentaExistencia"/>
+        <variable name="AltaSolicitudDeEnvioOut" xmlns:tns="http://ejbenvios/" messageType="tns:altaSolicitudDeEnvioResponse"/>
+        <variable name="AltaSolicitudDeEnvioIn" xmlns:tns="http://ejbenvios/" messageType="tns:altaSolicitudDeEnvio"/>
+        <variable name="AltaOCOut" xmlns:tns="http://ejbalmacen/" messageType="tns:altaOCResponse"/>
+        <variable name="AltaOCIn" xmlns:tns="http://ejbalmacen/" messageType="tns:altaOC"/>
+        <variable name="PagoConTDCOut" xmlns:tns="http://ejbpagos/" messageType="tns:PagoConTDCResponse"/>
+        <variable name="PagoConTDCIn" xmlns:tns="http://ejbpagos/" messageType="tns:PagoConTDC"/>
+        <variable name="MontoVtayDescuentaExistenciaOut" xmlns:tns="http://ejbalmacen/" messageType="tns:MontoVtayDescuentaExistenciaResponse"/>
+        <variable name="MontoVtayDescuentaExistenciaIn" xmlns:tns="http://ejbalmacen/" messageType="tns:MontoVtayDescuentaExistencia"/>
+        <variable name="TienditaWSDLOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" messageType="tns:TienditaWSDLOperationRequest"/>
+    </variables>
     <sequence>
-   </sequence>
+        <receive name="SolicitaTC" createInstance="yes" partnerLink="Tiendita" operation="TienditaWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" portType="tns:TienditaWSDLPortType" variable="TienditaWSDLOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from variable="TienditaWSDLOperationIn" part="idProduct"/>
+                <to>$MontoVtayDescuentaExistenciaIn.parameters/Product_Id</to>
+            </copy>
+            <copy>
+                <from variable="TienditaWSDLOperationIn" part="quantity"/>
+                <to>$MontoVtayDescuentaExistenciaIn.parameters/Cantidad</to>
+            </copy>
+        </assign>
+        <invoke name="Invoke1" partnerLink="Almacen" operation="MontoVtayDescuentaExistencia" xmlns:tns="http://ejbalmacen/" portType="tns:WSAlmacen" inputVariable="MontoVtayDescuentaExistenciaIn" outputVariable="MontoVtayDescuentaExistenciaOut"/>
+        <if name="If1">
+            <condition>0 &gt; $MontoVtayDescuentaExistenciaOut.parameters/return</condition>
+            <sequence name="Sequence2">
+                <assign name="Assign3">
+                    <copy>
+                        <from>$MontoVtayDescuentaExistenciaOut.parameters/return</from>
+                        <to>$PagoConTDCIn.parameters/dblMonto</to>
+                    </copy>
+                    <copy>
+                        <from>100000 + $TienditaWSDLOperationIn.idCustomer</from>
+                        <to>$PagoConTDCIn.parameters/intTDC</to>
+                    </copy>
+                </assign>
+                <invoke name="Invoke2" partnerLink="Pagos" operation="PagoConTDC" xmlns:tns="http://ejbpagos/" portType="tns:WSPagos" inputVariable="PagoConTDCIn" outputVariable="PagoConTDCOut"/>
+                <if name="If2">
+                    <condition>0 &gt; $PagoConTDCOut.parameters/return</condition>
+                    <sequence name="Sequence3">
+                        <assign name="Assign4">
+                            <copy>
+                                <from variable="TienditaWSDLOperationIn" part="idProduct"/>
+                                <to>$AltaOCIn.parameters/Product_Id</to>
+                            </copy>
+                            <copy>
+                                <from variable="TienditaWSDLOperationIn" part="idCustomer"/>
+                                <to>$AltaOCIn.parameters/Customer_Id</to>
+                            </copy>
+                            <copy>
+                                <from variable="TienditaWSDLOperationIn" part="quantity"/>
+                                <to>$AltaOCIn.parameters/Quantity</to>
+                            </copy>
+                            <copy>
+                                <from>25</from>
+                                <to>$AltaOCIn.parameters/ShippingCost</to>
+                            </copy>
+                            <copy>
+                                <from>1</from>
+                                <to>$AltaOCIn.parameters/intSalesDate</to>
+                            </copy>
+                            <copy>
+                                <from>0</from>
+                                <to>$AltaOCIn.parameters/intShippingDate</to>
+                            </copy>
+                            <copy>
+                                <from>'ESNAJ'</from>
+                                <to>$AltaOCIn.parameters/FreigthCompany</to>
+                            </copy>
+                        </assign>
+                        <invoke name="Invoke3" partnerLink="OrdenCompra" operation="altaOC" xmlns:tns="http://ejbalmacen/" portType="tns:WSOrdenCompra" inputVariable="AltaOCIn" outputVariable="AltaOCOut"/>
+                        <assign name="Assign6">
+                            <copy>
+                                <from>$AltaOCOut.parameters/return</from>
+                                <to>$AltaSolicitudDeEnvioIn.parameters/Orden_Compra</to>
+                            </copy>
+                            <copy>
+                                <from variable="TienditaWSDLOperationIn" part="idCustomer"/>
+                                <to>$AltaSolicitudDeEnvioIn.parameters/Customer_ID</to>
+                            </copy>
+                            <copy>
+                                <from>1</from>
+                                <to>$AltaSolicitudDeEnvioIn.parameters/Status</to>
+                            </copy>
+                        </assign>
+                        <invoke name="Invoke5" partnerLink="Envios" operation="altaSolicitudDeEnvio" xmlns:tns="http://ejbenvios/" portType="tns:WSEnvios" inputVariable="AltaSolicitudDeEnvioIn" outputVariable="AltaSolicitudDeEnvioOut"/>
+                        <reply name="Reply3" partnerLink="Tiendita" operation="TienditaWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" portType="tns:TienditaWSDLPortType" variable="TienditaWSDLOperationOut1"/>
+                    </sequence>
+                    <else>
+                        <sequence name="Sequence4">
+                            <assign name="Assign5">
+                                <copy>
+                                    <from variable="TienditaWSDLOperationIn" part="idProduct"/>
+                                    <to>$ReverseaDescuentaExistenciaIn.parameters/Product_Id</to>
+                                </copy>
+                                <copy>
+                                    <from variable="TienditaWSDLOperationIn" part="quantity"/>
+                                    <to>$ReverseaDescuentaExistenciaIn.parameters/Cantidad</to>
+                                </copy>
+                            </assign>
+                            <invoke name="Invoke4" partnerLink="Almacen" operation="ReverseaDescuentaExistencia" xmlns:tns="http://ejbalmacen/" portType="tns:WSAlmacen" inputVariable="ReverseaDescuentaExistenciaIn" outputVariable="ReverseaDescuentaExistenciaOut"/>
+                            <assign name="Assign7">
+                                <copy>
+                                    <from>'No hay crédito'</from>
+                                    <to variable="TienditaWSDLOperationOut2" part="part1"/>
+                                </copy>
+                            </assign>
+                            <reply name="Reply2" partnerLink="Tiendita" operation="TienditaWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" portType="tns:TienditaWSDLPortType" variable="TienditaWSDLOperationOut2"/>
+                        </sequence>
+                    </else>
+                </if>
+            </sequence>
+            <else>
+                <sequence name="Sequence1">
+                    <assign name="Assign2">
+                        <copy>
+                            <from>'Producto agotado'</from>
+                            <to variable="TienditaWSDLOperationOut" part="part1"/>
+                        </copy>
+                    </assign>
+                    <reply name="Reply1" partnerLink="Tiendita" operation="TienditaWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" portType="tns:TienditaWSDLPortType" variable="TienditaWSDLOperationOut"/>
+                </sequence>
+            </else>
+        </if>
+    </sequence>
 </process>
