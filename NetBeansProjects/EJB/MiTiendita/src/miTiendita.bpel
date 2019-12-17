@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="miTiendita"
+    targetNamespace="http://enterprise.netbeans.org/bpel/MiTiendita/miTiendita"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/MiTiendita/miTiendita"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling">
+    <import namespace="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" location="DescriptorWSDL/TienditaWSDL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WSAlmacenWrapper" location="WSAlmacenWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://ejbalmacen/" location="http://localhost:9090/WSAlmacen/WSAlmacen?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WSEnviosWrapper" location="WSEnviosWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://ejbenvios/" location="http://localhost:9090/WSEnvios/WSEnvios?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WSOrdenCompraWrapper" location="WSOrdenCompraWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://ejbalmacen/" location="http://localhost:9090/WSOrdenCompra/WSOrdenCompra?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WSPagosWrapper" location="WSPagosWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://ejbpagos/" location="http://localhost:9090/WSPagos/WSPagos?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="Almacen" xmlns:tns="http://enterprise.netbeans.org/bpel/WSAlmacenWrapper" partnerLinkType="tns:WSAlmacenLinkType" partnerRole="WSAlmacenRole"/>
+        <partnerLink name="Envios" xmlns:tns="http://enterprise.netbeans.org/bpel/WSEnviosWrapper" partnerLinkType="tns:WSEnviosLinkType" partnerRole="WSEnviosRole"/>
+        <partnerLink name="OrdenCompra" xmlns:tns="http://enterprise.netbeans.org/bpel/WSOrdenCompraWrapper" partnerLinkType="tns:WSOrdenCompraLinkType" partnerRole="WSOrdenCompraRole"/>
+        <partnerLink name="Pagos" xmlns:tns="http://enterprise.netbeans.org/bpel/WSPagosWrapper" partnerLinkType="tns:WSPagosLinkType" partnerRole="WSPagosRole"/>
+        <partnerLink name="Tiendita" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" partnerLinkType="tns:TienditaWSDL" myRole="TienditaWSDLPortTypeRole"/>
+    </partnerLinks>
+    <sequence>
+   </sequence>
+</process>

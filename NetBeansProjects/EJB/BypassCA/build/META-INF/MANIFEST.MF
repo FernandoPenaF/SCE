@@ -1,4 +1,0 @@
-Bundle-Name: BypassCA
-Bundle-SymbolicName: BypassCA
-Bundle-ManifestVersion: 2
-Bundle-Version: 1.0.0

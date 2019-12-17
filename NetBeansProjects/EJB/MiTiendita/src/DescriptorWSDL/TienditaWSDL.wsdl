@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="TienditaWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/MiTiendita/src/TienditaWSDL" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <types/>
+    <message name="TienditaWSDLOperationRequest">
+        <part name="idProduct" type="xsd:int"/>
+        <part name="idCustomer" type="xsd:int"/>
+        <part name="quantity" type="xsd:int"/>
+    </message>
+    <message name="TienditaWSDLOperationResponse">
+        <part name="part1" type="xsd:string"/>
+    </message>
+    <portType name="TienditaWSDLPortType">
+        <operation name="TienditaWSDLOperation">
+            <input name="input1" message="tns:TienditaWSDLOperationRequest"/>
+            <output name="output1" message="tns:TienditaWSDLOperationResponse"/>
+        </operation>
+    </portType>
+    <plnk:partnerLinkType name="TienditaWSDL">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="TienditaWSDLPortTypeRole" portType="tns:TienditaWSDLPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

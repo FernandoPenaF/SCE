@@ -13,7 +13,7 @@
         <endpoint display-name="Pagos" endpoint-name="WSPagosRole_partnerRole" file-path="tiendita.bpel" interface-name="ns1:WSPagos" name="endpoint10" process-name="tiendita" service-name="ns3:Pagos"/>
     </endpoints>
     <service-units>
-        <service-engine-service-unit artifacts-zip="Tiendita.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="TienditaCA-Tiendita" unit-name="Tiendita" unknown="false" x="-1" y="-1">
+        <service-engine-service-unit artifacts-zip="Tiendita.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="TienditaCA-Tiendita" unit-name="Tiendita" unknown="false" x="169" y="99">
             <provides endpoint="endpoint6"/>
             <consumes endpoint="endpoint7"/>
             <consumes endpoint="endpoint8"/>
@@ -22,27 +22,27 @@
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="TienditaCA-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port x="0" y="-1">
+                <port x="68" y="335">
                     <link xlink:href="../jbiServiceUnits/Tiendita/DescriptorWSDL/TienditaWSDL.wsdl#xpointer(/definitions/service[@name='TienditaWSDLService']/port[@name='TienditaWSDLPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint5"/>
                     <provides endpoint="endpoint5"/>
                 </port>
-                <port x="0" y="-1">
+                <port x="68" y="261">
                     <link xlink:href="../jbiServiceUnits/Tiendita/ServicioAlmacen/localhost_9090/WSAlmacen/WSAlmacen.wsdl#xpointer(/definitions/service[@name='WSAlmacen']/port[@name='WSAlmacenPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
                 </port>
-                <port x="0" y="-1">
+                <port x="68" y="187">
                     <link xlink:href="../jbiServiceUnits/Tiendita/ServicioAlmacen/localhost_9090/WSOrdenCompra/WSOrdenCompra.wsdl#xpointer(/definitions/service[@name='WSOrdenCompra']/port[@name='WSOrdenCompraPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint2"/>
                     <provides endpoint="endpoint2"/>
                 </port>
-                <port x="0" y="-1">
+                <port x="68" y="113">
                     <link xlink:href="../jbiServiceUnits/Tiendita/ServicioEnvio/localhost_9090/WSEnvios/WSEnvios.wsdl#xpointer(/definitions/service[@name='WSEnvios']/port[@name='WSEnviosPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint4"/>
                     <provides endpoint="endpoint4"/>
                 </port>
-                <port x="0" y="-1">
+                <port x="68" y="39">
                     <link xlink:href="../jbiServiceUnits/Tiendita/ServicioPago/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/service[@name='WSPagos']/port[@name='WSPagosPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint3"/>
                     <provides endpoint="endpoint3"/>
