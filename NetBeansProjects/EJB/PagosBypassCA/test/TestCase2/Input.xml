@@ -2,7 +2,7 @@
   <soapenv:Body>
     <ejb:PagoConTDC>
       <intTDC>100001</intTDC>
-      <dblMonto>7000.0</dblMonto>
+      <dblMonto>100000.0</dblMonto>
     </ejb:PagoConTDC>
   </soapenv:Body>
 </soapenv:Envelope>
