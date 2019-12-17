@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="PagosWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/PagosBypass/src/PagosWSDL"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/PagosBypass/src/PagosWSDL" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <types/>
+    <message name="PagosWSDLOperationRequest">
+        <part name="tarjeta" type="xsd:int"/>
+        <part name="monto" type="xsd:double"/>
+    </message>
+    <message name="PagosWSDLOperationResponse">
+        <part name="resultado" type="xsd:boolean"/>
+    </message>
+    <portType name="PagosWSDLPortType">
+        <operation name="PagosWSDLOperation">
+            <input name="input1" message="tns:PagosWSDLOperationRequest"/>
+            <output name="output1" message="tns:PagosWSDLOperationResponse"/>
+        </operation>
+    </portType>
+    <plnk:partnerLinkType name="PagosWSDL">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="PagosWSDLPortTypeRole" portType="tns:PagosWSDLPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

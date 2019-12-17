@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "WSPagos", targetNamespace = "http://ejbpagos/", wsdlLocation = "http://localhost:8080/WSPagos/WSPagos?WSDL")
+@WebServiceClient(name = "WSPagos", targetNamespace = "http://ejbpagos/", wsdlLocation = "http://localhost:9090/WSPagos/WSPagos?WSDL")
 public class WSPagos_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class WSPagos_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/WSPagos/WSPagos?WSDL");
+            url = new URL("http://localhost:9090/WSPagos/WSPagos?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

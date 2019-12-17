@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://ejbpagos/" xmlns:ns2="http://enterprise.netbeans.org/bpel/PagosBypass/pagosBypass" xmlns:ns3="http://j2ee.netbeans.org/wsdl/PagosBypass/src/PagosWSDL" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="WSPagosPort" interface-name="ns1:WSPagos" name="endpoint1" service-name="ns1:WSPagos"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="PagosWSDLPortTypeRole_myRole" file-path="pagosBypass.bpel" interface-name="ns3:PagosWSDLPortType" name="endpoint2" process-name="pagosBypass" service-name="ns2:PartnerLink1"/>
+        <endpoint display-name="PagoConTC" endpoint-name="WSPagosRole_partnerRole" file-path="pagosBypass.bpel" interface-name="ns1:WSPagos" name="endpoint3" process-name="pagosBypass" service-name="ns2:PagoConTC"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="PagosBypass.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="PagosBypassCA-PagosBypass" unit-name="PagosBypass" unknown="false" x="152" y="99">
+            <provides endpoint="endpoint2"/>
+            <consumes endpoint="endpoint3"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="PagosBypassCA-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port x="67" y="39">
+                    <link xlink:href="../jbiServiceUnits/PagosBypass/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/service[@name='WSPagos']/port[@name='WSPagosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint3" mode="" provider="endpoint1" route-type="" routing-rule="" state="unchanged"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiServiceUnits/PagosBypass/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/portType[@name='WSPagos'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/PagosBypass/PagosWSDL.wsdl#xpointer(/definitions/portType[@name='PagosWSDLPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiServiceUnits/PagosBypass/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/binding[@name='WSPagosPortBinding'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiServiceUnits/PagosBypass/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/service[@name='WSPagos'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

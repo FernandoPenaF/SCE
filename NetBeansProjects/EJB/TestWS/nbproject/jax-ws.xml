@@ -22,7 +22,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSPagos/WSPagos?WSDL</wsimport-option-value>
+          <wsimport-option-value>http://localhost:9090/WSPagos/WSPagos?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -54,7 +54,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSEnvios/WSEnvios?WSDL</wsimport-option-value>
+          <wsimport-option-value>http://localhost:9090/WSEnvios/WSEnvios?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -86,7 +86,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSAlmacen/WSAlmacen?WSDL</wsimport-option-value>
+          <wsimport-option-value>http://localhost:9090/WSAlmacen/WSAlmacen?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -122,7 +122,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSOrdenCompra/WSOrdenCompra?WSDL</wsimport-option-value>
+          <wsimport-option-value>http://localhost:9090/WSOrdenCompra/WSOrdenCompra?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

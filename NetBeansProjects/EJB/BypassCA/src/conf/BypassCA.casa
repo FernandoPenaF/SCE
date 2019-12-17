@@ -7,18 +7,18 @@
         <endpoint display-name="Pago" endpoint-name="WSPagosRole_partnerRole" file-path="bypass.bpel" interface-name="ns1:WSPagos" name="endpoint4" process-name="bypass" service-name="ns3:Pago"/>
     </endpoints>
     <service-units>
-        <service-engine-service-unit artifacts-zip="Bypass.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="BypassCA-Bypass" unit-name="Bypass" unknown="false" x="-1" y="-1">
+        <service-engine-service-unit artifacts-zip="Bypass.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="BypassCA-Bypass" unit-name="Bypass" unknown="false" x="170" y="99">
             <provides endpoint="endpoint3"/>
             <consumes endpoint="endpoint4"/>
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="BypassCA-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port x="0" y="-1">
+                <port x="67" y="118">
                     <link xlink:href="../jbiServiceUnits/Bypass/DescriptorWSDL.wsdl#xpointer(/definitions/service[@name='DescriptorWSDLService']/port[@name='DescriptorWSDLPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint2"/>
                     <provides endpoint="endpoint2"/>
                 </port>
-                <port x="0" y="-1">
+                <port x="67" y="39">
                     <link xlink:href="../jbiServiceUnits/Bypass/localhost_9090/WSPagos/WSPagos.wsdl#xpointer(/definitions/service[@name='WSPagos']/port[@name='WSPagosPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>

@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "WSEnvios", targetNamespace = "http://ejbenvios/", wsdlLocation = "http://localhost:8080/WSEnvios/WSEnvios?WSDL")
+@WebServiceClient(name = "WSEnvios", targetNamespace = "http://ejbenvios/", wsdlLocation = "http://localhost:9090/WSEnvios/WSEnvios?WSDL")
 public class WSEnvios_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class WSEnvios_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/WSEnvios/WSEnvios?WSDL");
+            url = new URL("http://localhost:9090/WSEnvios/WSEnvios?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

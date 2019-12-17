@@ -19,7 +19,7 @@
     <target name="wsimport-client-WSPagos" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WSPagos"/>
         <property name="wsdl-WSPagos" location="xml-resources/web-service-references/WSPagos/wsdl/localhost_8080/WSPagos/WSPagos.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSPagos" destdir="${build.generated.dir}/jax-wsCache/WSPagos" wsdl="${wsdl-WSPagos}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSPagos/WSPagos?WSDL" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSPagos" destdir="${build.generated.dir}/jax-wsCache/WSPagos" wsdl="${wsdl-WSPagos}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/WSPagos/WSPagos?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-WSPagos}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/WSPagos"/>
         </wsimport>
@@ -36,7 +36,7 @@
     <target name="wsimport-client-WSEnvios" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WSEnvios"/>
         <property name="wsdl-WSEnvios" location="xml-resources/web-service-references/WSEnvios/wsdl/localhost_8080/WSEnvios/WSEnvios.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSEnvios" destdir="${build.generated.dir}/jax-wsCache/WSEnvios" wsdl="${wsdl-WSEnvios}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSEnvios/WSEnvios?WSDL" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSEnvios" destdir="${build.generated.dir}/jax-wsCache/WSEnvios" wsdl="${wsdl-WSEnvios}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/WSEnvios/WSEnvios?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-WSEnvios}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/WSEnvios"/>
         </wsimport>
@@ -53,7 +53,7 @@
     <target name="wsimport-client-WSAlmacen" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WSAlmacen"/>
         <property name="wsdl-WSAlmacen" location="xml-resources/web-service-references/WSAlmacen/wsdl/localhost_8080/WSAlmacen/WSAlmacen.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSAlmacen" destdir="${build.generated.dir}/jax-wsCache/WSAlmacen" wsdl="${wsdl-WSAlmacen}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSAlmacen/WSAlmacen?WSDL" xnocompile="true" xendorsed="true" package="ejbalmacen">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSAlmacen" destdir="${build.generated.dir}/jax-wsCache/WSAlmacen" wsdl="${wsdl-WSAlmacen}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/WSAlmacen/WSAlmacen?WSDL" xnocompile="true" xendorsed="true" package="ejbalmacen">
             <depends file="${wsdl-WSAlmacen}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/WSAlmacen"/>
         </wsimport>
@@ -70,7 +70,7 @@
     <target name="wsimport-client-WSOrdenCompra" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WSOrdenCompra"/>
         <property name="wsdl-WSOrdenCompra" location="xml-resources/web-service-references/WSOrdenCompra/wsdl/localhost_8080/WSOrdenCompra/WSOrdenCompra.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSOrdenCompra" destdir="${build.generated.dir}/jax-wsCache/WSOrdenCompra" wsdl="${wsdl-WSOrdenCompra}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSOrdenCompra/WSOrdenCompra?WSDL" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSOrdenCompra" destdir="${build.generated.dir}/jax-wsCache/WSOrdenCompra" wsdl="${wsdl-WSOrdenCompra}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/WSOrdenCompra/WSOrdenCompra?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-WSOrdenCompra}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/WSOrdenCompra"/>
         </wsimport>
